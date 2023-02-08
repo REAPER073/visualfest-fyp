@@ -420,7 +420,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956016684c93a7446b22e86667bd3253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logoscreen: {fileID: 22752807}
+  logobg: {fileID: 22752809}
+  minAlphaValue: 0
+  maxAlphaValue: 1
+  speed: 0.5
 --- !u!4 &1440606919
 Transform:
   m_ObjectHideFlags: 0

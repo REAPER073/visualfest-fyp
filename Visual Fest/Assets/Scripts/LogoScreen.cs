@@ -5,12 +5,21 @@ using UnityEngine.UI;
 
 public class LogoScreen : MonoBehaviour
 {
-    public GameObject logoscreen;
-    Image bgimg;
+    public Image logobg;
+    public float alphaValue = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
-       
+        if (logobg == null)
+        {
+            Debug.LogError("Image component not assigned!");
+            return;
+        }
+
+        Color tempColor = logobg.color;
+        tempColor.a = alphaValue;
+        logobg.color = tempColor;
+
     }
 
     // Update is called once per frame

@@ -6,18 +6,21 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Image logobg;
-
     public GameObject LogoScreen;
     public GameObject LoginScreen;
+    public Button Gobtn, backbtn;
+
 
     float minAlphaValue = 0.0f;
     float maxAlphaValue = 1.0f;
     float speed = 1.0f;
     private bool increasing = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Gobtn.onClick.AddListener(MainScreen);
+        backbtn.onClick.AddListener(backbtnLog);
     }
 
     // Update is called once per frame
@@ -53,9 +56,16 @@ public class GameManager : MonoBehaviour
         tempColor.a = currentAlpha;
         logobg.color = tempColor;
     }
+
     public void MainScreen()
     {
         LogoScreen.SetActive(false);
         LoginScreen.SetActive(true);
+    }
+
+    public void backbtnLog()
+    {
+        LogoScreen.SetActive(true);
+        LoginScreen.SetActive(false);
     }
 }
